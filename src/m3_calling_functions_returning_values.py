@@ -130,7 +130,7 @@ def sum_of_digits(number):
 def run_test_digits_in_cube():
     """ Tests the   digits_in_cube   function. """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this function.
+    # done: 3. Implement this function.
     #   It TESTS the  digits_in_cube  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -155,6 +155,27 @@ def run_test_digits_in_cube():
     print('Testing the   digits_in_cube   function:')
     print('-----------------------------------------------------')
 
+    #test 1:
+    print()
+    expected = 1
+    actual = digits_in_cube(1)
+    print('test 1 expected: ', expected)
+    print('test 1 actual:   ', actual)
+
+    # test 2:
+    print()
+    expected = 10
+    actual = digits_in_cube(4)
+    print('test 2 expected: ', expected)
+    print('test 2 actual:   ', actual)
+
+    # test 3:
+    print()
+    expected = 9
+    actual = digits_in_cube(6)
+    print('test 3 expected: ', expected)
+    print('test 3 actual:   ', actual)
+
 
 def digits_in_cube(n):
     """
@@ -166,7 +187,7 @@ def digits_in_cube(n):
       this function returns (1 + 2 + 5), which is 8.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # done: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #   That is called TEST-DRIVEN DEVELOPMENT (TDD).
     #
@@ -175,6 +196,20 @@ def digits_in_cube(n):
     #    the    sum_of_digits    function that is DEFINED ABOVE.
     ####################################################################
     # ------------------------------------------------------------------
+
+    number = n ** 3
+
+    if number < 0:
+        number = -number
+
+    digit_sum = 0
+    while True:
+        if number == 0:
+            break
+        digit_sum = digit_sum + (number % 10)
+        number = number // 10
+
+    return digit_sum
 
 
 def run_test_digits_in_power():
