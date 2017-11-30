@@ -198,24 +198,13 @@ def digits_in_cube(n):
     # ------------------------------------------------------------------
 
     number = n ** 3
-
-    if number < 0:
-        number = -number
-
-    digit_sum = 0
-    while True:
-        if number == 0:
-            break
-        digit_sum = digit_sum + (number % 10)
-        number = number // 10
-
-    return digit_sum
+    return sum_of_digits(number)
 
 
 def run_test_digits_in_power():
     """ Tests the   digits_in_power   function. """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement this function.
+    # done: 5. Implement this function.
     #   It TESTS the  digits_in_power  function defined below.
     #   Include at least **   3   ** tests.
     #
@@ -226,12 +215,34 @@ def run_test_digits_in_power():
     print('Testing the   digits_in_power   function:')
     print('--------------------------------------------------')
 
+    # test 1:
+    print()
+    expected = 9
+    actual = digits_in_power(3, 3)
+    print('test 1 expected: ', expected)
+    print('test 1 actual:   ', actual)
+
+    # test 2:
+    print()
+    expected = 10
+    actual = digits_in_power(4, 3)
+    print('test 2 expected: ', expected)
+    print('test 2 actual:   ', actual)
+
+    # test 3:
+    print()
+    expected = 5
+    actual = digits_in_power(2, 5)
+    print('test 3 expected: ', expected)
+    print('test 3 actual:   ', actual)
+
 
 def digits_in_power(n, k):
     """
     What comes in:  Two positive integers, n and k.
     What goes out:
       The sum of the digits in x, where x is n raised to the kth power.
+      { output = sum_of_digits(n^k) }
     Side effects:   None.
     Example:
       If the arguments are 12 and 3, respectively,
@@ -239,13 +250,16 @@ def digits_in_power(n, k):
       since 12 to the 3rd power is 1728 (whose digits sum to 18).
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # done: 6. Implement and test this function.
     #
     ####################################################################
     # IMPORTANT: CALL, as many times as needed,
     #    the    sum_of_digits    function that is DEFINED ABOVE.
     ####################################################################
     # ------------------------------------------------------------------
+
+    number = n ** k
+    return sum_of_digits(number)
 
 
 def run_test_fancy_sums_of_digits():
