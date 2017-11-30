@@ -236,6 +236,11 @@ def run_test_digits_in_power():
     print('test 3 expected: ', expected)
     print('test 3 actual:   ', actual)
 
+    # test z:
+    print()
+    actual = digits_in_power(10, 999)
+    print('test z actual:   ', actual)
+
 
 def digits_in_power(n, k):
     """
@@ -285,6 +290,27 @@ def run_test_fancy_sums_of_digits():
     # in the doc-string to be sure that you understand the specification.
     # ------------------------------------------------------------------
 
+    # test 1:
+    print()
+    expected = 1
+    actual = fancy_sums_of_digits(10)
+    print('test 1 expected: ', expected)
+    print('test 1 actual:   ', actual)
+
+    # test 2:
+    print()
+    expected = 19084
+    actual = fancy_sums_of_digits(2)
+    print('test 2 expected: ', expected)
+    print('test 2 actual:   ', actual)
+
+    # test 3:
+    print()
+    expected = 124309
+    actual = fancy_sums_of_digits(35)
+    print('test 3 expected: ', expected)
+    print('test 3 actual:   ', actual)
+
 
 def fancy_sums_of_digits(n):
     """
@@ -293,6 +319,9 @@ def fancy_sums_of_digits(n):
       -- Let X denote the   sum   of the digits in (n ** 1000).
       -- Let Y denote the   sum   of the digits in (n ** 999).
       This function RETURNs the sum of the digits in (X ** Y).
+
+      { output = sum_of_digits( sum_of_digits(n ** 1000) ** sum_of_digits(n ** 999) )
+
     Side effects:   None.
     Examples:
       -- If n is 2, then:
@@ -311,13 +340,16 @@ def fancy_sums_of_digits(n):
             -- so this function returns 124309.
     """
     # ------------------------------------------------------------------
-    # TODO: 8. Implement and test this function.
+    # done: 8. Implement and test this function.
     #
     ####################################################################
     # IMPORTANT: CALL, as many times as needed,
     #    the    sum_of_digits    function that is DEFINED ABOVE.
     ####################################################################
     # ------------------------------------------------------------------
+
+    return sum_of_digits(sum_of_digits(n ** 1000) ** sum_of_digits(n ** 999))
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
