@@ -71,7 +71,7 @@ def draw_circles1():
     print('--------------------------------------------------')
 
     window = rg.RoseWindow(400, 400)
-    center = rg.Point(200,200)
+    center = rg.Point(200, 200)
 
     for k in range(21):
         circle = rg.Circle(center, (k*10))
@@ -79,6 +79,7 @@ def draw_circles1():
         window.render(0.02)
 
     window.close_on_mouse_click()
+
 
 def print_sequence2():
     """
@@ -135,8 +136,6 @@ def draw_circles2():
         circle.fill_color = 'blue'
         circle.attach_to(window)
         window.render(0.02)
-
-
 
     window.close_on_mouse_click()
 
@@ -232,7 +231,7 @@ def print_cosines():
     print('--------------------------------------------------')
 
     for k in range(101):
-        print(  80*(math.cos(k))  )
+        print(80*(math.cos(k)))
 
 
 def draw_cosines_and_sines():
